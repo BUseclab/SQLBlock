@@ -1,0 +1,4 @@
+echo 1 > /tmp/config
+
+mysql -u root -e "INSTALL PLUGIN sqlblock SONAME 'sqlblock.so'"
+service mysql restart

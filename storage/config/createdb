@@ -1,0 +1,7 @@
+usermod -d /var/lib/mysql/ mysql
+mkdir /var/run/mysqld
+chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
+service mysql restart
+mysql -u root -e "create database mysqldb"
+mysql -u root -e "create user admin identified by 'admin'"
+mysql -u root -e "grant all privileges on mysqldb.* to admin"

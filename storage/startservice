@@ -1,0 +1,13 @@
+#!/bin/bash
+usermod -d /var/lib/mysql/ mysql
+mkdir /var/run/mysqld
+chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
+service mysql restart
+ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock
+
+service nginx restart
+mkdir /var/run/php/
+service php7.2-fpm restart
+
+#chown -R mysql:mysql /tmp/
+tail -f /var/log/nginx/error.log

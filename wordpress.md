@@ -44,7 +44,8 @@ First, you need to record a benign request while you participate in poll. You ca
 - After running Burp suite, go to proxy tab and turn on intercepting mode. In the option tab you see the IP and port for the interception. You should modify your browser's proxy setting according to the information in the proxy tab of Burp suite.
 - Web browsers by default do not intercept the local requests. To change that you should follow the instruction for intercepting Localhost traffic. You can follow the instruction for Firefox [here](https://security.stackexchange.com/questions/142552/how-to-configure-burp-suite-for-localhost-application).
 - Visit the URL <http://localhost:9000/?p=4>. There is poll in this blog post, which you can submit your answer and record the request sent to the server using Burp suite
-- After observing the request in Burp suite, you can right-click and use the "save to file" option to save the request for submitting an answer to the poll.
+- After observing the request in Burp suite, you can right-click and use the "save item" option to save the request for submitting an answer to the poll to a file.
+![Save request to a file](./screenshot.png)
 
 
 To exploit the vulnerability in Polls widget you can use the following command. Note that you should replace the `path_to_saved_requset`.

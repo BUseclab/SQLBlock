@@ -44,6 +44,8 @@ def processCallstack(line):
         stack = calls[-1].strip(" ").strip("\n")
     if callstack == "":
         return None
+    if stack == "":
+        return "#"
 #    print("[%s] changes to [%s]" %(callstack, stack))
     return stack.strip(" ").strip("\n")
 
